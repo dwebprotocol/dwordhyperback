@@ -28,5 +28,5 @@ async function start() {
    console.log('    bee   ', db.feed.key.toString('hex'))
  
    // Now announce on dWeb
-   await replicate(db)
+   await replicate(core)
  }
