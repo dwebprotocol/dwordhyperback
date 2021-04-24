@@ -14,6 +14,10 @@ async function start() {
    // create dTree
    const db = new DTree(core, { keyEncoding: 'utf-8', valueEncoding: 'utf-8' })
 
+   await db.ready()
+   console.log('New bee created, key:')
+   console.log('    bee   ', db.feed.key.toString('hex'))
+
    // store each definition in the dictionary as key/value pairs using dTree's batch method
    const batch = db.batch()
    for (const { key, value } of dictionaryPairs()) {
